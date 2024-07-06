@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000; /* Black background */
+    color: #f00; /* Red text */
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Ensure the body is scrollable */
+    position: relative;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow:  0 0 1px black ;
+}
+
+canvas#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure canvas is behind other elements */
+}
+
+.content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+#countdown-image {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+#hostage-image {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.timer {
+    font-size: 48px;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .timer {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+    .timer {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+}
