@@ -60,9 +60,10 @@ document.addEventListener('keydown', (event) => {
 });
 
 
-window.addEventListener('load', function() {
-    var audio = new Audio('./Assests/leMusic.mp3');
-    audio.play().catch(function(error) {
-        console.log("Error playing audio:", error);
-    });
+
+document.addEventListener("click", function() {
+    var audio = document.getElementById("myAudio");
+    if (audio.paused) {
+        audio.play();
+    }
 });
