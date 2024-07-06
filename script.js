@@ -25,3 +25,37 @@ var x = setInterval(function() {
         document.getElementById("timer").innerHTML = "EXPIRED";
     }
 }, 1000);
+
+
+
+let currentIndex = 0;
+
+function showNextImage() {
+    const gallery = document.querySelector('.gallery');
+    const images = document.querySelectorAll('.gallery img');
+    currentIndex = (currentIndex + 1) % images.length;
+    const translateX = -currentIndex * 155; // 150px width + 5px margin (2.5px each side)
+    gallery.style.transform = `translateX(${translateX}px)`;
+}
+
+function showPreviousImage() {
+    const gallery = document.querySelector('.gallery');
+    const images = document.querySelectorAll('.gallery img');
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    const translateX = -currentIndex * 155;
+    gallery.style.transform = `translateX(${translateX}px)`;
+}
+
+function startSlideshow() {
+    setInterval(showNextImage, 2000); // Change image every 2 seconds
+}
+
+document.addEventListener('DOMContentLoaded', startSlideshow);
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+        showNextImage();
+    } else if (event.key === 'ArrowLeft') {
+        showPreviousImage();
+    }
+});
