@@ -1,5 +1,5 @@
 // Set the date and time we're counting down to (7th of July 2024 at 5 PM)
-var countDownDate = new Date("July 7, 2024 17:00:00").getTime();
+var countDownDate = new Date("July 7, 2024 17:30:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -57,4 +57,12 @@ document.addEventListener('keydown', (event) => {
     } else if (event.key === 'ArrowLeft') {
         showPreviousImage();
     }
+});
+
+
+window.addEventListener('load', function() {
+    var audio = new Audio('./Assests/leMusic.mp3');
+    audio.play().catch(function(error) {
+        console.log("Error playing audio:", error);
+    });
 });
