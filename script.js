@@ -22,10 +22,14 @@
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("timer").innerHTML = "TOO LATE";
+                document.getElementById("timer").innerHTML = "TAKEN DOWN BY EMU AND KIWI FEDS";
             }
         }, 1000);
 
+
+
+
+        
 let currentIndex = 0;
 
 function showNextImage() {
