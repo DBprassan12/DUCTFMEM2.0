@@ -4,12 +4,33 @@ body {
     margin: 0;
     padding: 0;
     background-color: lightblue;
+    background-image: url('./Assests/canberra.webp'); /* Add your wallpaper image path here */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden; /* Prevents scrollbar from showing */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for readability */
+    border-radius: 10px;
+    position: relative; /* Ensure the container is positioned relative to the canvas */
+    z-index: 1;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #333;
+    font-size: 2em;
+    margin: 20px 0;
 }
 
 .image-container {
@@ -19,6 +40,11 @@ body {
 img {
     max-width: 50%;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
 }
 
 .button-container {
@@ -34,19 +60,24 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.animated-text {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 600px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    button {
-        width: 80%;
-        font-size: 14px;
-    }
-}
+    
