@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: lightblue;
-    background-image: url('./Assests/canberra.webp'); /* Add your wallpaper image path here */
+    background-image: url('./Assests/police1.jpg'); /* Add your wallpaper image path here */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -21,16 +21,25 @@ body {
     z-index: 1;
 }
 
-h1 {
+h1, h2 {
     color: #333;
-    font-size: 2.5em;
     margin: 20px 0;
+    text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #fff, 
+        0 0 15px #ff0000, /* Red */
+        0 0 20px #ff0000, /* Red */
+        0 0 25px #ff0000, /* Red */
+        0 0 30px #0000ff, /* Blue */
+        0 0 35px #0000ff; /* Blue */
+}
+
+h1 {
+    font-size: 2.5em;
 }
 
 h2 {
-    color: #333;
     font-size: 2em;
-    margin: 20px 0;
 }
 
 .image-container {
@@ -53,19 +62,22 @@ img:hover {
 
 button {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 30px; /* Increased padding for a bigger button */
+    font-size: 20px; /* Increased font size for a bigger button */
+    font-weight: bold; /* Make font more bold */
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #ff69b4; /* Pink color */
     color: white;
     border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 10px; /* Increased border radius for a more prominent button */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4; /* Initial glowing effect */
 }
 
 button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+    background-color: #add8e6; /* Blue color */
+    transform: scale(1.1); /* Slightly larger scaling on hover */
+    box-shadow: 0 0 20px #add8e6, 0 0 40px #add8e6, 0 0 60px #add8e6; /* Enhanced glowing effect on hover */
 }
 
 .animated-text {
@@ -80,4 +92,15 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-    
+    /* Add any mobile-specific styles here */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures that the canvas does not interfere with user interactions */
+    z-index: 0;
+}
